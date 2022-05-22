@@ -23,6 +23,7 @@ namespace GithubExperimet.Controllers
             _logger = logger;
         }
 
+        //Check in Github
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
