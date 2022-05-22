@@ -28,13 +28,7 @@ namespace GithubExperimet.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
-            string cond = "c";
-            switch (cond)
-            {
-                case "a": break;
-                case "b": break;
-                case "c": break;
-            }
+            
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
