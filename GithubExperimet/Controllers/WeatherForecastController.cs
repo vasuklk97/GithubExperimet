@@ -35,6 +35,7 @@ namespace GithubExperimet.Controllers
             switch ("a")
             {
                 case "a": break;
+                case "b": break;
             }
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
