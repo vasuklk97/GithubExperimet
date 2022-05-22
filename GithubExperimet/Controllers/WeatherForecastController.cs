@@ -24,10 +24,19 @@ namespace GithubExperimet.Controllers
         }
 
         //Check in Github
+        //Web Changes
+        //Hello
+        //Test Pull changes
+        //Edit Test
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+            switch ("a")
+            {
+                case "a": break;
+                case "b": break;
+            }
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -35,6 +44,8 @@ namespace GithubExperimet.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+
+           
         }
     }
 }
