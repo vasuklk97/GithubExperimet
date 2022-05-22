@@ -32,9 +32,11 @@ namespace GithubExperimet.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
-            switch ("a")
+            string cond = "c";
+            switch (cond)
             {
                 case "a": break;
+                case "c": break;
             }
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
