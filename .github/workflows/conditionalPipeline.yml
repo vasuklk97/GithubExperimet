@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
     paths:
-      - '/GithubExperimet/Controllers/**'
+      - './GithubExperimet/**'
 
 jobs:
   build:
