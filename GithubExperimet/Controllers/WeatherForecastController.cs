@@ -27,7 +27,6 @@ namespace GithubExperimet.Controllers
         //Web Changes
         //Hello
         //Test Pull changes
-        //Edit Test
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
