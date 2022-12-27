@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
     paths:
-      - '**.cs'
+      - 'GithubExperiment/GithubExperiment/Controllers/**'
 
 jobs:
   build:
