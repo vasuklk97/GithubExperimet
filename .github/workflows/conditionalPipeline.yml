@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
     paths:
-      - '.github/workflows/**'
+      - '/GithubExperimet/Controllers/**'
 
 jobs:
   build:
