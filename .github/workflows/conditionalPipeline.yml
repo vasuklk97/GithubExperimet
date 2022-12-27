@@ -24,4 +24,4 @@ jobs:
     steps:
     - name: Echo Name
       run: |
-        echo ${{ github.event.inputs.action }}
+        echo ${{ github.event.inputs.actions }}
