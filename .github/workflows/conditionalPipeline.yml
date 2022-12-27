@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'master'
-    paths:
-      - '/GithubExperimet/Controllers/**'
+#     paths:
+#       - '/GithubExperimet/Controllers/**'
 
 jobs:
   build:
