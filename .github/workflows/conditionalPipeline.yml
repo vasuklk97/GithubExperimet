@@ -5,7 +5,7 @@ on:
     branches:
       - 'master'
     paths:
-      - './GithubExperiment/.github/workflows/**'
+      - 'GithubExperimet/.github/workflows/**'
 
 jobs:
   build:
