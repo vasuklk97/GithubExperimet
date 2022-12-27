@@ -6,6 +6,17 @@ on:
       - 'master'
     paths:
       - 'GithubExperimet/Controllers/**'
+      
+  workflow_dispatch:
+    inputs:
+      actions:
+        type: choice
+        required: true
+        default: Vasu
+        description: Name
+        options:
+          - Vasu
+          - Vishnu
 
 jobs:
   build:
