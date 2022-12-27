@@ -24,4 +24,4 @@ jobs:
     steps:
     - name: Echo Name
       run: |
-        echo "Vasu"
+        echo ${{ github.event.inputs.action }}
