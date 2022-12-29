@@ -2,8 +2,7 @@ name: Experiment
 
 on:
   push:
-    branches:
-      - 'master'
+    branches: [ 'master', 'FirstBranch']
     paths:
       - 'GithubExperimet/Controllers/**'
       
