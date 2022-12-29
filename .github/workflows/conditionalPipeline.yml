@@ -4,7 +4,15 @@ on:
   push:
     branches: [ 'master', 'FirstBranch']
     paths:
-      - 'GithubExperimet/Controllers/**'
+      - '.github/workflows/**'
+
+    inputs:
+      numOctocats:
+        description: 'Number of Octocats'
+        required: false
+        default: '1'
+  
+    
       
   workflow_dispatch:
     inputs:
@@ -21,6 +29,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: prerelease or not
+      id: pre_or_not
+      run: |
+        if [${{ github.event.inputs.actions }} == null]
+        then
+            echo "::set-output name=prerelease::"Vasu"
+        else
+            echo "::set-output name=prerelease::${{ github.event.inputs.actions }}"
+        fi
+    
     - name: Echo Name
       run: |
-        echo ${{ github.event.inputs.actions }}
+        echo ${{ steps.pre_or_not.outputs.prerelease }}
