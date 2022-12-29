@@ -1,0 +1,26 @@
+name: Experiment
+
+on:
+  push:
+    branches: [ 'master', 'FirstBranch']
+    paths:
+      - 'GithubExperimet/Controllers/**'
+      
+  workflow_dispatch:
+    inputs:
+      actions:
+        type: choice
+        required: true
+        default: Vasu
+        description: Name
+        options:
+          - Vasu
+          - Vishnu
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo Name
+      run: |
+        echo ${{ github.event.inputs.actions }}
