@@ -28,7 +28,7 @@ jobs:
       run: |
         if [${{ github.event.inputs.actions }} == null]
         then
-            echo "::set-output name=prerelease::"Vasu"
+            echo "::set-output name=prerelease::Vasu"
         else
             echo "::set-output name=prerelease::${{ github.event.inputs.actions }}"
         fi
