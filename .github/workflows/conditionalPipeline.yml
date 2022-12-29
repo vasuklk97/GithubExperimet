@@ -20,7 +20,7 @@ on:
           - Vishnu
           
 env:
-  actions: Vasu
+  actions: Vishnu
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
     steps:
     - name: Echo Name
       run: |
-        echo ${{ steps.pre_or_not.outputs.prerelease }} || ${{ env.actions }}
+        echo ${{ env.actions }}
