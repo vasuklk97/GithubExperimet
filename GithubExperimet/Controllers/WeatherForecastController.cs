@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GithubExperimet.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] 
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
