@@ -22,7 +22,9 @@ on:
 
 jobs:
   build:
-    outputs: ${{ steps.setVasu.outputs.name || (steps.setVishnu.outputs.name)}}
+    outputs: 
+      nameTag: |
+        ${{ steps.setVasu.outputs.first || (steps.setVishnu.outputs.first)}}
     runs-on: ubuntu-latest
     steps:
     - name: Echo Name Vasu
@@ -45,5 +47,5 @@ jobs:
     steps:
     - name: Print name
       run: |
-        echo ${{ needs.build.outputs.first }}
+        echo ${{ needs.build.outputs.nameTag }}
       
