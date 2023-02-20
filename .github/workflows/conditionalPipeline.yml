@@ -29,14 +29,14 @@ jobs:
     steps:
     - name: Echo Name Vasu
       id: setVasu
-      if: ${{ github.event.inputs.action == 'Vasu' }}
+      if: ${{ github.event.inputs.actions == 'Vasu' }}
       run: |
         name='vasu'
         echo "::set-output name=first::$name
         
     - name: Echo Name Vishnu
       id: setVishnu
-      if: ${{ github.event.inputs.action == 'Vasu' }}
+      if: ${{ github.event.inputs.actions == 'Vishnu' }}
       run: |
         name='vasu'
         echo "::set-output name=first::$name
