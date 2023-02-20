@@ -2,7 +2,7 @@ name: Experiment
 
 on:
   push:
-    branches: [ 'master', 'FirstBranch']
+    branches: [ 'master', 'FirstBranch', 'conditionalOutput']
     paths:
       - '.github/workflows/**'
   
@@ -20,12 +20,32 @@ on:
           - Vishnu
           
 env:
-  actions: Vishnu
+  actions: ${{ steps.}}
 
 jobs:
   build:
+    outputs: ${{ steps.setVasu.outputs.name || (steps.setVishnu.outputs.name)}}
     runs-on: ubuntu-latest
     steps:
-    - name: Echo Name
+    - name: Echo Name Vasu
+      id: setVasu
+      if: ${{ github.event.inputs.action == 'Vasu' }}
       run: |
-        echo ${{ env.actions }}
+        name='vasu'
+        echo "::set-output name=first::$name
+        
+    - name: Echo Name Vishnu
+      id: setVishnu
+      if: ${{ github.event.inputs.action == 'Vasu' }}
+      run: |
+        name='vasu'
+        echo "::set-output name=first::$name
+        
+  job2:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+    - name: Print name
+      run: |
+        echo ${{ needs.build.outputs.first }}
+      
