@@ -2,7 +2,7 @@ name: Experiment
 
 on:
   push:
-    branches: [ 'master', 'FirstBranch', 'conditionalOutput']
+    branches: [ 'master', 'FirstBranch' ]
     paths:
       - '.github/workflows/**'
   
@@ -31,13 +31,15 @@ jobs:
       id: setVasu
       if: ${{ github.event.inputs.actions == 'Vasu' }}
       run: |
-        echo "::set-output name=first::${{ github.event.inputs.actions }}"
+        echo "first=${{ github.event.inputs.actions }}" >> $GITHUB_OUTPUT
+        #echo "::set-output name=first::${{ github.event.inputs.actions }}"
         
     - name: Echo Name Vishnu
       id: setVishnu
       if: ${{ github.event.inputs.actions == 'Vishnu' }}
       run: |
-        echo "::set-output name=first::${{ github.event.inputs.actions }}"
+        echo "first=${{ github.event.inputs.actions }}" >> $GITHUB_OUTPUT
+        #echo "::set-output name=first::${{ github.event.inputs.actions }}"
         
   job2:
     runs-on: ubuntu-latest
