@@ -1,23 +1,11 @@
 name: Experiment
 
 on:
-  push:
-    branches: [ 'FirstBranch']
-    paths:
-      - '.github/workflows/**'
+  workflow_run:
+    workflows: [ "Main Workflow" ]
+    types:
+      - workflow_run
   
-    
-      
-  workflow_dispatch:
-    inputs:
-      actions:
-        type: choice
-        required: true
-        default: Vasu
-        description: Name
-        options:
-          - Vasu
-          - Vishnu
           
 env:
   actions: Vishnu
