@@ -1,26 +1,21 @@
-name: Experiment
+name: My Reusable Workflow
 
 on:
-  push:
-    branches: [ 'master', 'FirstBranch']
-    paths:
-      - 'GithubExperimet/Controllers/**'
-      
-  workflow_dispatch:
+  workflow_call:
     inputs:
-      actions:
-        type: choice
+      NAME2:
+        required: false
+        type: string
+    secrets:
+      NAME:
         required: true
-        default: Vasu
-        description: Name
-        options:
-          - Vasu
-          - Vishnu
 
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Echo Name
-      run: |
-        echo ${{ github.event.inputs.actions }}
+
+      - name: Run My Action
+        run: |
+          # Use the environment variable in your action
+          echo "My secret API key is: ${{ inputs.NAME2 }} ${{ secrets.NAME }} "

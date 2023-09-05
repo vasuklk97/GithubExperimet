@@ -1,0 +1,16 @@
+name: My Main Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  my-job:
+    uses: vasuklk/commonworkflow/.github/workflows/reuse.yml@main # Path to the reusable workflow file
+    secrets:
+      NAME: ${{ secrets.NAME }}
+    with:
+      NAME2: "Testing for another repo"
+        
