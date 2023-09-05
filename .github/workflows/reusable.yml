@@ -12,5 +12,5 @@ jobs:
     secrets:
       NAME: ${{ secrets.NAME }}
     with:
-      NAME2: "Vasu"
+      NAME2: "Testing for another repo"
         
