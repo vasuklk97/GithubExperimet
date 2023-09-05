@@ -1,18 +1,15 @@
-name: My Reusable Workflow
+name: My Main Workflow
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    env:
+      MY_SECRET_ENV_VARIABLE: ${{ secrets.NAME }} # Set the environment variable
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run My Action
-        run: |
-          # Use the environment variable in your action
-          echo "My secret API key is: ${{ secrets.MY_SECRET_API_KEY }}"
+      - name: Run My Reusable Workflow
+        uses: ./.github/workflows/conditionalPipeline.yml # Path to the reusable workflow file
