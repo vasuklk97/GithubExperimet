@@ -8,4 +8,6 @@ on:
 jobs:
   my-job:
     uses: ./.github/workflows/conditionalPipeline.yml # Path to the reusable workflow file
+    secrets:
+      NAME: ${{ secrets.NAME }}
         
