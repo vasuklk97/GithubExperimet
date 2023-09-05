@@ -1,17 +1,18 @@
-name: Main Workflow
+name: My Reusable Workflow
 
 on:
   push:
-    branches: 
-      - master
+    branches:
+      - main
 
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Trigger Reusable Workflow
+      - name: Run My Action
         run: |
-          echo "Hi"
+          # Use the environment variable in your action
+          echo "My secret API key is: ${{ secrets.MY_SECRET_API_KEY }}"
