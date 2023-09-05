@@ -2,6 +2,10 @@ name: My Reusable Workflow
 
 on:
   workflow_call:
+    inputs:
+      NAME2:
+        required: false
+        type: string
     secrets:
       NAME:
         required: true
@@ -12,8 +16,6 @@ jobs:
     steps:
 
       - name: Run My Action
-        env:
-          Name: ${{ secrets.NAME }}
         run: |
           # Use the environment variable in your action
-          echo "My secret API key is: ${{ Name }}"
+          echo "My secret API key is: ${{ inputs.NAME2 }} ${{ secrets.NAME }} "
