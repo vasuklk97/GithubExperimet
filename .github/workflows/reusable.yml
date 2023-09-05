@@ -11,4 +11,6 @@ jobs:
     uses: ./.github/workflows/conditionalPipeline.yml # Path to the reusable workflow file
     secrets:
       NAME: ${{ secrets.NAME }}
+    with:
+      NAME2: "Vasu"
         
