@@ -1,19 +1,18 @@
-name: Experiment
+name: My Reusable Workflow
 
 on:
-  workflow_run:
-    workflows: [ "Main Workflow" ]
-    types:
-      - workflow_run
-  
-          
-env:
-  actions: Vishnu
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Echo Name
-      run: |
-        echo ${{ env.actions }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run My Action
+        run: |
+          # Use the environment variable in your action
+          echo "My secret API key is: ${{ secrets.MY_SECRET_API_KEY }}"
