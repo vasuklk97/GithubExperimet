@@ -2,7 +2,7 @@ name: Experiment
 
 on:
   push:
-    branches: [ 'master', 'FirstBranch']
+    branches: [ 'FirstBranch']
     paths:
       - '.github/workflows/**'
   
