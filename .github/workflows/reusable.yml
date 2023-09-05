@@ -7,12 +7,5 @@ on:
 
 jobs:
   my-job:
-    runs-on: ubuntu-latest
-    env:
-      MY_SECRET_ENV_VARIABLE: ${{ secrets.NAME }} # Set the environment variable
-    steps:
-      - name: Code checkout
-        uses: actions/checkout@v2
-      - name: Run My Reusable Workflow
-        uses: ./.github/workflows/conditionalPipeline.yml # Path to the reusable workflow file
+    uses: ./.github/workflows/conditionalPipeline.yml # Path to the reusable workflow file
         
