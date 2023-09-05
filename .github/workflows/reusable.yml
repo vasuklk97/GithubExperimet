@@ -13,6 +13,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Trigger Reusable Workflow
-        uses: ./.github/workflows/conditionalPipeline.yml
-        with:
-          NAME: ${{ secrets.NAME }}
+        run: |
+          echo "Hi"
